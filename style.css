@@ -1,0 +1,140 @@
+     * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+
+            /* Smooth dark gradient */
+            background: linear-gradient(-45deg, #1a2a6c, #2c5364, #16222a);
+            background-size: 300% 300%;
+            animation: gradientMove 25s ease infinite;
+        }
+
+        /* Slow animation */
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 80% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating circles */
+        body::before, body::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            animation: float 15s infinite ease-in-out;
+        }
+
+        body::before {
+            width: 250px;
+            height: 250px;
+            top: 10%;
+            left: 10%;
+        }
+
+        body::after {
+            width: 180px;
+            height: 180px;
+            bottom: 10%;
+            right: 10%;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .app {
+            width: 95%;
+            max-width: 750px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(15px);
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 
+                0 15px 40px rgba(0,0,0,0.4),
+                0 0 15px rgba(255,255,255,0.1);
+            color: white;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 65%;
+            padding: 14px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 14px 20px;
+            border: none;
+            background: linear-gradient(45deg, #ff6a00, #ee0979);
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-left: 8px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 10px #ff6a00;
+        }
+
+        .history {
+            margin-top: 20px;
+        }
+
+        .history button {
+            margin: 6px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.2);
+        }
+
+        #clearBtn {
+            background: red;
+            margin-top: 10px;
+        }
+
+        .weather-box {
+            margin-top: 25px;
+            background: rgba(255,255,255,0.15);
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        #result {
+            font-size: 20px;
+            line-height: 2;
+        }
+
+        footer {
+            margin-top: 20px;
+            color: white;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        footer span {
+            color: #ff6a00;
+            font-weight: 600;
+        }
